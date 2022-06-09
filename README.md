@@ -1,5 +1,5 @@
 # OMG
-================
+
 안녕하세요! 이거 맞는걸까요.
 ***
 **This is an OMG**
@@ -8,7 +8,7 @@
 -----------------
 <pre>
 <code>
-'''This is Code'''
+This is Code
 </code?
 </pre>
 ***
