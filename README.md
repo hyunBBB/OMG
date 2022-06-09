@@ -1,11 +1,11 @@
 # OMG
-================================================================
-안녕하세요! 이게 과연 맞을까 하는 고민
+================
+안녕하세요! 이거 맞는걸까요.
 ***
-This is an OMG
-=====================================
-  help
-------------------
+**This is an OMG**
+================
+  help me
+-----------------
 <pre>
 <code>
 '''This is Code'''
@@ -21,7 +21,7 @@ This is an OMG
 3.heeeeeeeyyyyy
 ****
 +나의 이름은
-  +뭐게
+  +
     +김현비
     _Kim HyunBi_
-    ![Alt text]()
+    ![Alt text](https://user-images.githubusercontent.com/106740347/172789675-a32a103e-02a9-46a8-b416-eb82d76bf6cd.jpg)
