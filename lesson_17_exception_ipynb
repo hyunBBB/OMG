@@ -1,0 +1,263 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled3.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMV5+F4Vt1A94ZqfXmMez0k",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/hyunBBB/OMG/blob/main/lesson_17_exception_ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "5LhTmn3mIqUS"
+      },
+      "outputs": [],
+      "source": [
+        ""
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###예외 처리\n",
+        "\n",
+        "    - 프로그램이 실행 중 오류가 발생했을 때 -> 예외 상황\n",
+        "\n",
+        "    - 예외상황이 발생하면 코드 진행이 중단되므로 계속 진행할 수 있도록 선언\n"
+      ],
+      "metadata": {
+        "id": "cswsPo3hIv61"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###try exception\n",
+        "      - try : \n",
+        "             문제가 없을 시 실행할 코드\n",
+        "\n",
+        "      - except:\n",
+        "             문제 발생(예외상황)시 실행할 코드\n"
+      ],
+      "metadata": {
+        "id": "zeOaVLDBJKlc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 강제로 문제 발생 예제\n",
+        "def deviding():\n",
+        "    n1, n2 = tuple(input(\"insert number: \").split(\" \"))\n",
+        "    return int(n1)/int(n2)"
+      ],
+      "metadata": {
+        "id": "lDGnlzpRJeJt"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "deviding()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5zvwNdpfKM_Y",
+        "outputId": "e2d1022e-ab1a-4cc5-d4e8-aa9c9662202e"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "insert number: 15 5\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "3.0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###tryp except 사용\n",
+        "  "
+      ],
+      "metadata": {
+        "id": "85lwwp9nKnqR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def deviding():\n",
+        "    try:\n",
+        "        n1, n2 = tuple(input(\"insert number : \").split(\" \"))\n",
+        "        return int(n1)/int(n2)\n",
+        "    except:\n",
+        "        return \"Non-sense!\""
+      ],
+      "metadata": {
+        "id": "SnpCCo5wKZz9"
+      },
+      "execution_count": 5,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "deviding()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 52
+        },
+        "id": "lZbSVduCLDaG",
+        "outputId": "b14cc3f1-b879-45a0-9445-f0c47f53d66b"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "insert number : 20 0\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Non-sense!'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###try except exception\n",
+        "    - python에서 발생 가능한 예외 상항을 exception 객체에 미리 정의 되어 있음\n",
+        "    - 해당 exception 발생 시 return에 원하는 사항을 작성할 수 있따\n",
+        "    "
+      ],
+      "metadata": {
+        "id": "PguE19D-Lin2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def deviding():\n",
+        "    try:\n",
+        "        n1, n2 = tuple(input(\"insert number: \").split(\" \"))\n",
+        "        n3 = int(input())\n",
+        "        for i in range(n3*100000):\n",
+        "            print(n3)\n",
+        "        return int(n1)/int(n2)\n",
+        "    except ZeroDivisionError:\n",
+        "        return \"NOn-sense!\"\n",
+        "    except Keyboardinterrupt:\n",
+        "        return \"요청에 따라 종료\""
+      ],
+      "metadata": {
+        "id": "JP-Bec5_LEgY"
+      },
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "deviding()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 433
+        },
+        "id": "Wdfb1wNDMZF4",
+        "outputId": "ff1ebed6-2baf-4040-9e03-6cef2235ee8c"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "insert number: 2 0 \n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-8-89cf8f74962a>\u001b[0m in \u001b[0;36mdeviding\u001b[0;34m()\u001b[0m\n\u001b[1;32m      2\u001b[0m     \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m         \u001b[0mn1\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mn2\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mtuple\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"insert number: \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msplit\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\" \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      4\u001b[0m         \u001b[0mn3\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mValueError\u001b[0m: too many values to unpack (expected 2)",
+            "\nDuring handling of the above exception, another exception occurred:\n",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-10-71128961264b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdeviding\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-8-89cf8f74962a>\u001b[0m in \u001b[0;36mdeviding\u001b[0;34m()\u001b[0m\n\u001b[1;32m      8\u001b[0m     \u001b[0;32mexcept\u001b[0m \u001b[0mZeroDivisionError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      9\u001b[0m         \u001b[0;32mreturn\u001b[0m \u001b[0;34m\"NOn-sense!\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 10\u001b[0;31m     \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardinterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     11\u001b[0m         \u001b[0;32mreturn\u001b[0m \u001b[0;34m\"요청에 따라 종료\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'Keyboardinterrupt' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "zuG0fGNwMaZQ"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
